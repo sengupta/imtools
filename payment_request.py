@@ -18,8 +18,8 @@ class InstamojoClient(object):
             self, purpose, amount,
             buyer_name, email, phone,
             redirect_url=None, webhook=None,
-            allow_repeated_payments=False,
-            send_email=True, send_sms=True):
+            allow_repeated_payments=True,
+            send_email=False, send_sms=False):
         response = self.session.post(
             self.PAYMENT_REQUEST_CREATE_ENDPOINT,
             data=dict(
